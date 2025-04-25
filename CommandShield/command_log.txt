@@ -17,3 +17,6 @@
 [Mon Apr 21 10:42:27 2025] User: current_user, Command: ping 192.168.1.1
 [Mon Apr 21 10:43:54 2025] User: current_user, Command: scan 127.0.0.1 80 100
 [Mon Apr 21 10:44:20 2025] User: current_user, Command: decrypt KhoorZruog 3
+[Fri Apr 25 08:11:37 2025] User: current_user, Command: help
+[Fri Apr 25 08:13:42 2025] User: current_user, Command: help scan
+[Fri Apr 25 08:16:17 2025] User: current_user, Command: history
