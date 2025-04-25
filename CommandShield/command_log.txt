@@ -1,0 +1,19 @@
+[Mon Apr 21 09:08:14 2025] User: current_user, Command: help
+[Mon Apr 21 09:08:26 2025] User: current_user, Command: help scan
+[Mon Apr 21 09:08:33 2025] User: current_user, Command: help [scan]
+[Mon Apr 21 09:10:03 2025] User: current_user, Command: scan 127.0.0.1 80 100
+[Mon Apr 21 09:18:22 2025] User: current_user, Command: help
+[Mon Apr 21 09:18:32 2025] User: current_user, Command: help ping
+[Mon Apr 21 09:18:40 2025] User: current_user, Command: help
+[Mon Apr 21 09:19:16 2025] User: current_user, Command: encrypt helloworld 3
+[Mon Apr 21 09:20:19 2025] User: current_user, Command: scan 127.0.0.1 1000
+[Mon Apr 21 10:22:09 2025] User: current_user, Command: help
+[Mon Apr 21 10:22:13 2025] User: current_user, Command: help scan
+[Mon Apr 21 10:22:20 2025] User: current_user, Command: exit
+[Mon Apr 21 10:41:20 2025] User: current_user, Command: help
+[Mon Apr 21 10:41:33 2025] User: current_user, Command: help scan
+[Mon Apr 21 10:41:37 2025] User: current_user, Command: help ping
+[Mon Apr 21 10:41:58 2025] User: current_user, Command: encrypt HelloWorld 3
+[Mon Apr 21 10:42:27 2025] User: current_user, Command: ping 192.168.1.1
+[Mon Apr 21 10:43:54 2025] User: current_user, Command: scan 127.0.0.1 80 100
+[Mon Apr 21 10:44:20 2025] User: current_user, Command: decrypt KhoorZruog 3
