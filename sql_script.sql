@@ -6,14 +6,14 @@ use dbcommandshield;
 select * from  tbusuario;
 CREATE TABLE tbusuario (
     idusuario INT AUTO_INCREMENT PRIMARY KEY,  
-    login VARCHAR(100) NOT NULL,
-    senha VARCHAR(100) NOT NULL
+    login VARCHAR(45) NOT NULL,
+    senha VARCHAR(45) NOT NULL
 );
 
 -- Criando a tabela tbfunction
 CREATE TABLE tbfunction (
     idfunction INT AUTO_INCREMENT PRIMARY KEY,   
-    descfunction VARCHAR(100) NOT NULL
+    descfunction VARCHAR(45) NOT NULL
 );
 
 -- Criando a tabela tblog
