@@ -1,2 +1,4 @@
-﻿  processador_comandos.c
-  CommandShield.vcxproj -> C:\Users\Victor\source\repos\CommandShield\x64\Debug\CommandShield.exe
+﻿  TesteConexao.c
+C:\Users\verin\source\repos\commandshield\CommandShield\TesteConexao.c(16,5): warning C4013: 'assert_true' indefinido; assumindo extern retornando int
+C:\Users\verin\source\repos\commandshield\CommandShield\TesteConexao.c(24,5): warning C4013: 'assert_string_equal' indefinido; assumindo extern retornando int
+C:\Users\verin\source\repos\commandshield\CommandShield\TesteConexao.c(87,5): warning C4013: 'assert_non_null' indefinido; assumindo extern retornando int

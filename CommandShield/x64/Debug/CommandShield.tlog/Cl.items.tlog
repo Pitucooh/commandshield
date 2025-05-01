@@ -1,7 +1,10 @@
-C:\Users\Victor\source\repos\CommandShield\CommandShield\ajuda_usuario.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\ajuda_usuario.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\ferramentas_cripto.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\ferramentas_cripto.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\ferramentas_redes.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\ferramentas_redes.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\gerenciamento_usuarios.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\gerenciamento_usuarios.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\logging.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\logging.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\main.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\main.obj
-C:\Users\Victor\source\repos\CommandShield\CommandShield\processador_comandos.c;C:\Users\Victor\source\repos\CommandShield\CommandShield\x64\Debug\processador_comandos.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\ajuda_usuario.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\ajuda_usuario.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\ferramentas_cripto.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\ferramentas_cripto.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\ferramentas_redes.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\ferramentas_redes.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\gerenciamento_usuarios.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\gerenciamento_usuarios.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\logging.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\logging.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\main.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\main.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\processador_comandos.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\processador_comandos.obj
+C:\Users\verin\source\repos\commandshield\CommandShield\TesteConexao.c;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\TesteConexao.obj
+C:\Users\verin\source\repos\commandshield\packages\gmock.1.11.0\lib\native\src\gtest\gtest-all.cc;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\gtest-all.obj
+C:\Users\verin\source\repos\commandshield\packages\gmock.1.11.0\lib\native\src\gmock\gmock-all.cc;C:\Users\verin\source\repos\commandshield\CommandShield\x64\Debug\gmock-all.obj

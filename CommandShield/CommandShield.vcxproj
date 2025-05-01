@@ -26,6 +26,7 @@
     <ClCompile Include="logging.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
+    <ClCompile Include="TesteConexao.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ajuda_usuario.h" />
@@ -38,6 +39,7 @@
   <ItemGroup>
     <None Include="guia_usuario.md" />
     <None Include="log_comandos.dat" />
+    <None Include="packages.config" />
     <None Include="users.dat" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -150,5 +152,14 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\gtest.1.7.0\build\native\gtest.targets" Condition="Exists('..\packages\gtest.1.7.0\build\native\gtest.targets')" />
+    <Import Project="..\packages\gmock.1.11.0\build\native\gmock.targets" Condition="Exists('..\packages\gmock.1.11.0\build\native\gmock.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\gtest.1.7.0\build\native\gtest.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gtest.1.7.0\build\native\gtest.targets'))" />
+    <Error Condition="!Exists('..\packages\gmock.1.11.0\build\native\gmock.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gmock.1.11.0\build\native\gmock.targets'))" />
+  </Target>
 </Project>

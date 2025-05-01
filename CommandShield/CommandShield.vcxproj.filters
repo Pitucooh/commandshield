@@ -16,6 +16,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Teste">
+      <UniqueIdentifier>{96f0a5c1-cef1-45cf-ac8c-96bf1946b722}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="logging.c">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TesteConexao.c">
+      <Filter>Teste</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,5 +72,6 @@
     <None Include="guia_usuario.md">
       <Filter>docs</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

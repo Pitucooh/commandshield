@@ -1,7 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Victor\\source\\repos\\commandshield\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\verin\\source\\repos\\commandshield\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\logging.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\logging.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\TesteConexao.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\TesteConexao.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\PREVIEW\\VC\\TOOLS\\MSVC\\14.44.35112\\INCLUDE\\XUTILITY||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\processador_comandos.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\processador_comandos.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ajuda_usuario.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ferramentas_cripto.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ferramentas_redes.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\gerenciamento_usuarios.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\gerenciamento_usuarios.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ferramentas_redes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ajuda_usuario.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.26100.0\\UCRT\\CRTDBG.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\ferramentas_cripto.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\guia_usuario.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A74CFE5E-E053-4E1F-B5A1-526F1C2BA047}|CommandShield\\CommandShield.vcxproj|solutionrelative:CommandShield\\guia_usuario.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +68,206 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "logging.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\logging.c",
+              "RelativeDocumentMoniker": "CommandShield\\logging.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\logging.c",
+              "RelativeToolTip": "CommandShield\\logging.c",
+              "ViewState": "AgIAABMAAAAAAAAAAAAqwCYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T22:36:18.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TesteConexao.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\TesteConexao.c",
+              "RelativeDocumentMoniker": "CommandShield\\TesteConexao.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\TesteConexao.c",
+              "RelativeToolTip": "CommandShield\\TesteConexao.c",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAgwH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:16:00.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ferramentas_cripto.h",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.h",
+              "RelativeDocumentMoniker": "CommandShield\\ferramentas_cripto.h",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.h",
+              "RelativeToolTip": "CommandShield\\ferramentas_cripto.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T21:16:56.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "gerenciamento_usuarios.h",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.h",
+              "RelativeDocumentMoniker": "CommandShield\\gerenciamento_usuarios.h",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.h",
+              "RelativeToolTip": "CommandShield\\gerenciamento_usuarios.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T21:50:44.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ajuda_usuario.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.c",
+              "RelativeDocumentMoniker": "CommandShield\\ajuda_usuario.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.c",
+              "RelativeToolTip": "CommandShield\\ajuda_usuario.c",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwDsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:19:13.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\main.c",
+              "RelativeDocumentMoniker": "CommandShield\\main.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\main.c",
+              "RelativeToolTip": "CommandShield\\main.c",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:19:54.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "xutility",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.44.35112\\include\\xutility",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.44.35112\\include\\xutility",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.44.35112\\include\\xutility",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\VC\\Tools\\MSVC\\14.44.35112\\include\\xutility",
+              "ViewState": "AgIAAFUdAAAAAAAAAAASwGIdAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-01T22:03:47.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "processador_comandos.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\processador_comandos.c",
+              "RelativeDocumentMoniker": "CommandShield\\processador_comandos.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\processador_comandos.c",
+              "RelativeToolTip": "CommandShield\\processador_comandos.c",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T22:36:21.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "gerenciamento_usuarios.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.c",
+              "RelativeDocumentMoniker": "CommandShield\\gerenciamento_usuarios.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\gerenciamento_usuarios.c",
+              "RelativeToolTip": "CommandShield\\gerenciamento_usuarios.c",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:24:35.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ferramentas_redes.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.c",
+              "RelativeDocumentMoniker": "CommandShield\\ferramentas_redes.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.c",
+              "RelativeToolTip": "CommandShield\\ferramentas_redes.c",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:23:20.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ferramentas_redes.h",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.h",
+              "RelativeDocumentMoniker": "CommandShield\\ferramentas_redes.h",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_redes.h",
+              "RelativeToolTip": "CommandShield\\ferramentas_redes.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T21:17:05.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ajuda_usuario.h",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.h",
+              "RelativeDocumentMoniker": "CommandShield\\ajuda_usuario.h",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ajuda_usuario.h",
+              "RelativeToolTip": "CommandShield\\ajuda_usuario.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T21:16:52.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "crtdbg.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\crtdbg.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\crtdbg.h",
+              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\crtdbg.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\ucrt\\crtdbg.h",
+              "ViewState": "AgIAAKcAAAAAAAAAAAASwI0CAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T21:39:27.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ferramentas_cripto.c",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.c",
+              "RelativeDocumentMoniker": "CommandShield\\ferramentas_cripto.c",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\ferramentas_cripto.c",
+              "RelativeToolTip": "CommandShield\\ferramentas_cripto.c",
+              "ViewState": "AgIAADsAAAAAAAAAAAAiwFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-01T21:20:59.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "guia_usuario.md",
+              "DocumentMoniker": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\guia_usuario.md",
+              "RelativeDocumentMoniker": "CommandShield\\guia_usuario.md",
+              "ToolTip": "C:\\Users\\verin\\source\\repos\\commandshield\\CommandShield\\guia_usuario.md",
+              "RelativeToolTip": "CommandShield\\guia_usuario.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-05-01T21:19:05.764Z",
+              "EditorCaption": ""
             }
           ]
         }
