@@ -55,6 +55,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "gerenciamento_usuarios.h",
@@ -66,10 +70,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-09T11:53:42.344Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -105,7 +105,7 @@
               "RelativeDocumentMoniker": "CommandShield\\gerenciamento_usuarios.c",
               "ToolTip": "C:\\commandshield\\CommandShield\\gerenciamento_usuarios.c",
               "RelativeToolTip": "CommandShield\\gerenciamento_usuarios.c",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-09T11:40:57.363Z",
               "EditorCaption": ""

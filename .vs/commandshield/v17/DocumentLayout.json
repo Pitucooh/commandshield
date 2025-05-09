@@ -51,8 +51,7 @@
               "ViewState": "AgIAADwAAAAAAAAAAAAUwEoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-09T11:48:09.539Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "CommandShield\\gerenciamento_usuarios.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-09T11:53:42.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:53:42.344Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "CommandShield\\main.c",
               "ViewState": "AgIAACQAAAAAAAAAAAAUwDoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-05-09T11:50:18.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:50:18.132Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "CommandShield\\logging.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-09T11:48:46.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:48:46.582Z"
             },
             {
               "$type": "Document",
@@ -120,8 +116,7 @@
               "RelativeToolTip": "CommandShield\\processador_comandos.c",
               "ViewState": "AgIAAD8AAAAAAAAAAAAEwFAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-05-09T11:24:20.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:24:20.611Z"
             },
             {
               "$type": "Document",
@@ -133,8 +128,7 @@
               "RelativeToolTip": "CommandShield\\ferramentas_redes.c",
               "ViewState": "AgIAAKYAAAAAAAAAAAAuwPQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-05-09T11:19:52.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T11:19:52.269Z"
             }
           ]
         }
