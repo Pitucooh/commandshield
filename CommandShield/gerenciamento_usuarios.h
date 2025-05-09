@@ -15,4 +15,7 @@ int authenticate_user();
 // Verifica se o usuário atual tem permissão de administrador
 int is_admin_user();
 
+// Variável que deve ser acessível externamente
+extern User current_user;
+
 #endif

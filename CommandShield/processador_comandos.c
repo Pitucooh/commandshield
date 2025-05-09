@@ -27,7 +27,7 @@ void display_welcome_banner() {
         printf("                                                                                \\_/ \n");
         printf("\n");
         printf("=======================================================================================\n");
-        printf("           Faça seu Login!  (Para ver os comandos disponíveis, digite 'help'         \n\n");
+        printf("           Faça seu Login!  (Para ver os comandos disponíveis, digite 'help')         \n\n");
 		printf("=======================================================================================\n");
 	}
 
@@ -66,7 +66,7 @@ int process_command(const char* command) {
     }
 
     // Comandos de rede
-    if (strncmp(command, "scan", 4) == 0) {
+    if (strncmp(command, "scan", 4) == 0 || strncmp(command, "ping",4) == 0) {
         return handle_network_scan(command);
     }
 
@@ -74,7 +74,11 @@ int process_command(const char* command) {
     if (strncmp(command, "encrypt", 7) == 0 || strncmp(command, "decrypt", 7) == 0) {
         return handle_crypto_command(command);
     }
-
+    //comando histórico
+    if (strcmp(command, "history") == 0) {
+        view_command_history();
+        return 1;
+    }
     // Comando não reconhecido
     printf("Comando não reconhecido. Digite 'help' para ver a lista de comandos disponíveis.\n");
     return 1;

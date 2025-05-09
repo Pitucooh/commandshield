@@ -19,23 +19,41 @@ int main() {
         return 1;
     }
 
+    // Exibir o banner de boas-vindas após autenticação bem-sucedida
+    display_welcome_banner();
+
     // Loop principal do programa
     while (status) {
         printf("CommandShield> ");
-        fgets(command, sizeof(command), stdin);
+        if (fgets(command, sizeof(command), stdin) == NULL) {
+            // Tratar erro ou EOF
+            printf("Erro ao ler comando. Encerrando.\n");
+            break;
+        }
 
         // Remover quebra de linha
         command[strcspn(command, "\n")] = 0;
 
+        // Ignorar comandos vazios
+        if (command[0] == '\0') {
+            continue;
+        }
+
         // Processar comando
         status = process_command(command);
 
-        // Registrar log
-        log_command(command);
+        // Registrar log (exceto para comando "history" para evitar poluição)
+        if (strcmp(command, "history") != 0) {
+            log_command(command);
+        }
     }
 
     // Finalização do sistema
     cleanup_system();
+
+    // Pausa opcional antes de encerrar (útil se estiver executando fora do VS)
+    printf("\nPressione Enter para encerrar...");
+    getchar();
 
     return 0;
 }

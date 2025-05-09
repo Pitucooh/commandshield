@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 // Usuário atual
-static User current_user;
+User current_user;
 
 int authenticate_user() {
     char username[50];

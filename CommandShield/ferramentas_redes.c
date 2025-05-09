@@ -4,43 +4,56 @@
 #include <stdlib.h>
 #include <string.h>
 #include <winsock2.h>
-#include <ws2tcpip.h>  // Para inet_pton
+#include <ws2tcpip.h>  // Para inet_pton e getaddrinfo
 
 // Precisamos linkar com ws2_32.lib
 #pragma comment(lib, "ws2_32.lib")
 
 int handle_network_scan(const char* command) {
-    char host[100] = { 0 };
-    int start_port = 0, end_port = 0;
-    char cmd[20] = { 0 };
+    // Comando ping
+    if (strncmp(command, "ping", 4) == 0) {
+        char host[100] = { 0 };
 
-    // Parse comando com validação adequada
-    if (sscanf_s(command, "%19s %99s %d %d",
-        cmd, (unsigned int)sizeof(cmd),
-        host, (unsigned int)sizeof(host),
-        &start_port, &end_port) == 4) {
-        if (strcmp(cmd, "scan") == 0) {
+        // Extrair o host após "ping "
+        if (sscanf_s(command, "ping %99s", host, (unsigned int)sizeof(host)) == 1) {
+            printf("Executando ping para %s...\n", host);
+
+            if (ping_host(host)) {
+                printf("✓ Host %s está acessível.\n", host);
+            }
+            else {
+                printf("✗ Host %s não está acessível.\n", host);
+            }
+            return 1;
+        }
+        else {
+            printf("Uso incorreto. Exemplo: ping 192.168.1.1 ou ping google.com\n");
+            return 1;
+        }
+    }
+
+    // Comandos de scan
+    if (strncmp(command, "scan", 4) == 0) {
+        char host[100] = { 0 };
+        int start_port = 0, end_port = 0;
+
+        // Parse comando com validação adequada
+        if (sscanf_s(command, "scan %99s %d %d",
+            host, (unsigned int)sizeof(host),
+            &start_port, &end_port) == 3) {
             scan_ports(host, start_port, end_port);
             return 1;
         }
-    }
-
-    // Comando ping
-    if (sscanf_s(command, "%19s %99s",
-        cmd, (unsigned int)sizeof(cmd),
-        host, (unsigned int)sizeof(host)) == 2) {
-        if (strcmp(cmd, "ping") == 0) {
-            if (ping_host(host)) {
-                printf("Host %s está acessível.\n", host);
-            }
-            else {
-                printf("Host %s não está acessível.\n", host);
-            }
+        else {
+            printf("Uso incorreto. Formato: scan [host] [porta_inicial] [porta_final]\n");
+            printf("Exemplo: scan 192.168.1.1 1 1000\n");
             return 1;
         }
     }
 
-    printf("Uso incorreto do comando. Exemplos:\n");
+    // Se chegou aqui, o comando não foi reconhecido como scan ou ping
+    printf("Comando de rede não reconhecido. Use 'scan' ou 'ping'.\n");
+    printf("Exemplos:\n");
     printf("  scan 192.168.1.1 1 1000 - Escaneia portas de 1 a 1000\n");
     printf("  ping 192.168.1.1 - Verifica se o host está acessível\n");
     return 1;
@@ -67,17 +80,36 @@ void scan_ports(const char* host, int start_port, int end_port) {
 
     // Converter o endereço IP
     if (inet_pton(AF_INET, host, &(server.sin_addr)) != 1) {
-        printf("Endereço IP inválido ou não pôde ser convertido: %s\n", host);
-        WSACleanup();
-        return;
+        printf("Tentando resolver nome de domínio: %s\n", host);
+
+        // Tentar resolver nome de domínio
+        struct addrinfo hints, * res;
+        memset(&hints, 0, sizeof(hints));
+        hints.ai_family = AF_INET;
+        hints.ai_socktype = SOCK_STREAM;
+
+        if (getaddrinfo(host, NULL, &hints, &res) != 0) {
+            printf("Não foi possível resolver o nome de host: %s (Erro: %d)\n",
+                host, WSAGetLastError());
+            WSACleanup();
+            return;
+        }
+
+        server.sin_addr = ((struct sockaddr_in*)res->ai_addr)->sin_addr;
+        char ip_str[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &(server.sin_addr), ip_str, INET_ADDRSTRLEN);
+        printf("Endereço resolvido: %s -> %s\n", host, ip_str);
+
+        freeaddrinfo(res);
     }
 
-    printf("Endereço IP convertido com sucesso. Iniciando scan...\n");
+    printf("Iniciando scan de portas...\n");
 
     for (int port = start_port; port <= end_port; port++) {
-        // Relatar progresso a cada 10 portas
-        if (port % 10 == 0) {
-            printf("Verificando porta %d...\n", port);
+        // Relatar progresso a cada 100 portas
+        if ((port - start_port) % 100 == 0 && port > start_port) {
+            printf("Progresso: verificadas %d de %d portas...\n",
+                port - start_port, end_port - start_port + 1);
         }
 
         sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -121,7 +153,11 @@ int ping_host(const char* host) {
     WSADATA wsaData;
     SOCKET sock;
     struct sockaddr_in server;
-    int result;
+    int result = 0;
+    int ports_to_try[] = { 80, 443, 22, 21, 25, 3389 }; // Portas comuns
+    int num_ports = sizeof(ports_to_try) / sizeof(ports_to_try[0]);
+
+    printf("Tentando fazer ping para o host: %s\n", host);
 
     // Inicializar Winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
@@ -129,19 +165,14 @@ int ping_host(const char* host) {
         return 0;
     }
 
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock == INVALID_SOCKET) {
-        printf("Falha ao criar socket. Erro: %d\n", WSAGetLastError());
-        WSACleanup();
-        return 0;
-    }
-
     // Configurar servidor
     memset(&server, 0, sizeof(server));
     server.sin_family = AF_INET;
 
-    // Converter o endereço IP
+    // Tentar converter o endereço IP
     if (inet_pton(AF_INET, host, &(server.sin_addr)) != 1) {
+        printf("Tentando resolver nome de domínio: %s\n", host);
+
         // Tentar resolver nome de domínio
         struct addrinfo hints, * res;
         memset(&hints, 0, sizeof(hints));
@@ -150,29 +181,65 @@ int ping_host(const char* host) {
 
         if (getaddrinfo(host, NULL, &hints, &res) != 0) {
             printf("Não foi possível resolver o nome de host: %s\n", host);
-            closesocket(sock);
             WSACleanup();
             return 0;
         }
 
         server.sin_addr = ((struct sockaddr_in*)res->ai_addr)->sin_addr;
+        char ip_str[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &(server.sin_addr), ip_str, INET_ADDRSTRLEN);
+        printf("Endereço resolvido: %s -> %s\n", host, ip_str);
+
         freeaddrinfo(res);
     }
 
-    server.sin_port = htons(80); // Tenta conectar na porta 80 (HTTP)
+    printf("Tentando várias portas para verificar conectividade...\n");
 
-    // Definir timeout
-    struct timeval timeout;
-    timeout.tv_sec = 1;
-    timeout.tv_usec = 0;
-    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (char*)&timeout, sizeof(timeout));
-    setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, (char*)&timeout, sizeof(timeout));
+    // Tentar várias portas comuns
+    for (int i = 0; i < num_ports; i++) {
+        int port = ports_to_try[i];
+        printf("Tentando porta %d...\n", port);
 
-    // Tentar conectar
-    result = connect(sock, (struct sockaddr*)&server, sizeof(server));
+        sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (sock == INVALID_SOCKET) {
+            continue;
+        }
 
-    closesocket(sock);
+        // Definir timeout
+        struct timeval timeout;
+        timeout.tv_sec = 1;
+        timeout.tv_usec = 0;
+        setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (char*)&timeout, sizeof(timeout));
+        setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, (char*)&timeout, sizeof(timeout));
+
+        server.sin_port = htons(port);
+        if (connect(sock, (struct sockaddr*)&server, sizeof(server)) != SOCKET_ERROR) {
+            printf("Conexão estabelecida na porta %d.\n", port);
+            result = 1;
+            closesocket(sock);
+            break;
+        }
+
+        closesocket(sock);
+    }
+
+    // Se nenhuma porta respondeu, vamos tentar um teste mais simples
+    if (!result) {
+        printf("Nenhuma porta respondeu. Verificando se o IP é alcançável...\n");
+
+        // Usar função ping do sistema
+        char cmd[256];
+        sprintf_s(cmd, sizeof(cmd), "ping -n 1 -w 1000 %s > NUL", host);
+        result = (system(cmd) == 0);
+
+        if (result) {
+            printf("Host responde ao ping ICMP.\n");
+        }
+        else {
+            printf("Host não responde ao ping ICMP.\n");
+        }
+    }
+
     WSACleanup();
-
-    return (result != SOCKET_ERROR);
+    return result;
 }
