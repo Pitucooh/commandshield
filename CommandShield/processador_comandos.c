@@ -6,6 +6,7 @@
 #include "ferramentas_redes.h"
 #include "ferramentas_cripto.h"
 #include "ajuda_usuario.h"
+#include "teste.h"
 
 void display_welcome_banner() {
         printf("\n");
@@ -77,6 +78,11 @@ int process_command(const char* command) {
     //comando histórico
     if (strcmp(command, "history") == 0) {
         view_command_history();
+        return 1;
+    }
+    // teste
+    if (strcmp(command, "test") == 0) {
+        run_terminal_tests();  // Chama a função de testes
         return 1;
     }
     // Comando não reconhecido

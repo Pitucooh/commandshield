@@ -26,7 +26,7 @@
     <ClCompile Include="logging.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
-    <ClCompile Include="TesteConexao.c" />
+    <ClCompile Include="teste.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ajuda_usuario.h" />
@@ -35,6 +35,7 @@
     <ClInclude Include="gerenciamento_usuarios.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="processador_comandos.h" />
+    <ClInclude Include="teste.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="guia_usuario.md" />
