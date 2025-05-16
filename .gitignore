@@ -13,3 +13,5 @@
 /.vs/commandshield/v17/DocumentLayout.backup.json
 /.vs/commandshield/v17/DocumentLayout.json
 /.vs/commandshield/v17/.suo
+/.vs/slnx.sqlite
+/.gitignore
