@@ -80,12 +80,18 @@ int process_command(const char* command) {
         view_command_history();
         return 1;
     }
-    // teste
+    // teste branco
     if (strcmp(command, "test") == 0) {
-        run_terminal_tests();  // Chama a função de testes
+        run_terminal_tests();  
+        return 1;
+    }
+    // teste caixa preta
+    if (strcmp(command, "test-black") == 0) {
+        run_black_box_tests();
         return 1;
     }
     // Comando não reconhecido
     printf("Comando não reconhecido. Digite 'help' para ver a lista de comandos disponíveis.\n");
     return 1;
+   
 }

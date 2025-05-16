@@ -27,6 +27,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
     <ClCompile Include="teste.c" />
+    <ClCompile Include="testecp.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ajuda_usuario.h" />

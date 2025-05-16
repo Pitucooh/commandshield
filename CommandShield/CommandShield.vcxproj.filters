@@ -48,6 +48,9 @@
     <ClCompile Include="teste.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="testecp.c">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="processador_comandos.h">
