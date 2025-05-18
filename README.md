@@ -40,17 +40,13 @@ gcc main.c *.c -o commandshield
 
 <table>
   <tr>
-    <td></td>
-    <td></td>
     <td align="center">
       <a href="https://github.com/Pitucooh">
-        <img src="https://avatars.githubusercontent.com/u/132522413?v=4" width="100px;" alt="João Pedro"/>
+        <img src="https://avatars.githubusercontent.com/u/132522413?v=4" width="100px;" alt="Usuário 1"/>
         <br />
         <sub><b>João Pedro</b></sub>
       </a>
     </td>
-    <td></td>
-    <td></td>
     <td align="center">
       <a href="https://github.com/vewadie">
         <img src="https://avatars.githubusercontent.com/u/133230074?v=4" width="100px;" alt="Usuário 2"/>
@@ -58,8 +54,6 @@ gcc main.c *.c -o commandshield
         <sub><b>Verina Wadie</b></sub>
       </a>
     </td>
-    <td></td>
-    <td></td>
     <td align="center">
       <a href="https://github.com/VCPregno">
         <img src="https://avatars.githubusercontent.com/u/66253800?v=4" width="100px;" alt="Usuário 3"/>
@@ -67,8 +61,6 @@ gcc main.c *.c -o commandshield
         <sub><b>Victor Cecche Pregnolatto</b></sub>
       </a>
     </td>
-    <td></td>
-    <td></td>
     <td align="center">
       <a href="https://github.com/vitorhbp">
         <img src="https://avatars.githubusercontent.com/u/141740748?v=4" width="100px;" alt="Usuário 4"/>
@@ -76,8 +68,6 @@ gcc main.c *.c -o commandshield
         <sub><b>vitorhbp</b></sub>
       </a>
     </td>
-    <td></td>
-    <td></td>
     <td align="center">
       <a href="https://github.com/0Guizo">
         <img src="https://avatars.githubusercontent.com/u/127771252?v=4" width="100px;" alt="Usuário 5"/>
@@ -85,8 +75,6 @@ gcc main.c *.c -o commandshield
         <sub><b>GuilhermeRodriguez</b></sub>
       </a>
     </td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
 
