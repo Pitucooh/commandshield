@@ -42,35 +42,35 @@ gcc main.c *.c -o commandshield
   <tr>
     <td align="center">
       <a href="https://github.com/Pitucooh">
-        <img src="https://avatars.githubusercontent.com/u/132522413?v=4" width="100px;" alt="Usuário 1"/>
+        <img src="https://avatars.githubusercontent.com/u/132522413?v=4" width="100px;" alt="João Pedro"/>
         <br />
         <sub><b>João Pedro</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/vewadie">
-        <img src="https://avatars.githubusercontent.com/u/133230074?v=4" width="100px;" alt="Usuário 2"/>
+        <img src="https://avatars.githubusercontent.com/u/133230074?v=4" width="100px;" alt="Verina Wadie"/>
         <br />
         <sub><b>Verina Wadie</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/VCPregno">
-        <img src="https://avatars.githubusercontent.com/u/66253800?v=4" width="100px;" alt="Usuário 3"/>
+        <img src="https://avatars.githubusercontent.com/u/66253800?v=4" width="100px;" alt="Victor Cecche Pregnolatto"/>
         <br />
         <sub><b>Victor Cecche Pregnolatto</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/vitorhbp">
-        <img src="https://avatars.githubusercontent.com/u/141740748?v=4" width="100px;" alt="Usuário 4"/>
+        <img src="https://avatars.githubusercontent.com/u/141740748?v=4" width="100px;" alt="vitorhbp"/>
         <br />
         <sub><b>vitorhbp</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/0Guizo">
-        <img src="https://avatars.githubusercontent.com/u/127771252?v=4" width="100px;" alt="Usuário 5"/>
+        <img src="https://avatars.githubusercontent.com/u/127771252?v=4" width="100px;" alt="GuilhermeRodriguez"/>
         <br />
         <sub><b>GuilhermeRodriguez</b></sub>
       </a>
