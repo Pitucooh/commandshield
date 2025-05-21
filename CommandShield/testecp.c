@@ -15,11 +15,11 @@ void run_black_box_tests() {
     printf("\n[1] help\n");
     process_user_input("help");
 
-    // Teste 2: Comando válido de ping
+    // Teste 2: Comando vï¿½lido de ping
     printf("\n[2] ping 127.0.0.1\n");
     process_user_input("ping 127.0.0.1");
 
-    // Teste 3: Comando inválido de ping
+    // Teste 3: Comando invï¿½lido de ping
     printf("\n[3] ping 256.256.256.256\n");
     process_user_input("ping 256.256.256.256");
 
@@ -35,11 +35,11 @@ void run_black_box_tests() {
     printf("\n[6] decrypt Senha123 5\n");
     process_user_input("decrypt Senha123 5");
 
-    // Teste 7: Comando inválido qualquer
+    // Teste 7: Comando invï¿½lido qualquer
     printf("\n[7] comandoInvalido\n");
     process_user_input("comandoInvalido");
 
-    // Teste 8: Histórico
+    // Teste 8: Histï¿½rico
     printf("\n[8] history\n");
     process_user_input("history");
 

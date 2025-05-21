@@ -77,10 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="users.dat" />
-    <None Include="log_comandos.dat" />
     <None Include="guia_usuario.md">
       <Filter>docs</Filter>
     </None>
     <None Include="packages.config" />
+    <None Include="log_comandos.dat">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
 </Project>
