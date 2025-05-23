@@ -1,2 +1,4 @@
 ﻿  main.c
+C:\Users\verin\source\repos\commandshield\CommandShield\main.c(90,19): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+C:\Users\verin\source\repos\commandshield\CommandShield\main.c(142,27): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
   CommandShield.vcxproj -> C:\Users\verin\Source\Repos\commandshield\x64\Debug\CommandShield.exe

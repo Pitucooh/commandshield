@@ -51,6 +51,9 @@
     <ClCompile Include="testecp.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="mysql_wrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="processador_comandos.h">
@@ -72,6 +75,9 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="teste.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql_wrapper.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

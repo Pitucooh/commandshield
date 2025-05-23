@@ -1,150 +1,227 @@
-// main.c - Ponto de entrada principal do programa
+// main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "processador_comandos.h"
-#include "gerenciamento_usuarios.h"
-#include "logging.h"
-//#include <mysql/mysql.h>  // Biblioteca MySQL Connector/C
-//
-//// Variáveis globais para conexão MySQL
-//MYSQL* conn;
-//MYSQL_RES* res;
-//MYSQL_ROW row;
-//
-//// Configuração do banco - ajuste com seus dados
-//const char* server = "localhost";         // Servidor MySQL
-//const char* user = "root";                 // Usuário MySQL
-//const char* password = "sua_senha";        // Senha MySQL
-//const char* database = "nome_do_banco";   // Nome do banco
-//
-//// Função para autenticação do usuário no banco
-//int authenticate_user(MYSQL* conn) {
-//    char username[50];
-//    char pass_input[11];  // senha limitada a 10 caracteres + '\0'
-//    char query[256];
-//
-//    printf("Username: ");
-//    fgets(username, sizeof(username), stdin);
-//    username[strcspn(username, "\n")] = 0;
-//
-//    printf("Password (10 caracteres): ");
-//    fgets(pass_input, sizeof(pass_input), stdin);
-//    pass_input[strcspn(pass_input, "\n")] = 0;
-//
-//    if (strlen(pass_input) != 10) {
-//        printf("Erro: A senha deve ter exatamente 10 caracteres.\n");
-//        return 0;
-//    }
-//
-//    // Preparar query para buscar a senha do usuário no banco
-//    snprintf(query, sizeof(query),
-//        "SELECT senha FROM tbusuario WHERE login='%s'", username);
-//
-//    if (mysql_query(conn, query)) {
-//        fprintf(stderr, "Erro na consulta: %s\n", mysql_error(conn));
-//        return 0;
-//    }
-//
-//    res = mysql_store_result(conn);
-//    if (res == NULL) {
-//        fprintf(stderr, "Erro ao obter resultado: %s\n", mysql_error(conn));
-//        return 0;
-//    }
-//
-//    row = mysql_fetch_row(res);
-//    if (row != NULL) {
-//        // Comparar senha do banco (row[0]) com senha digitada
-//        if (strcmp(row[0], pass_input) == 0) {
-//            printf("Usuário autenticado com sucesso!\n");
-//            mysql_free_result(res);
-//            return 1;
-//        }
-//        else {
-//            printf("Senha incorreta.\n");
-//        }
-//    }
-//    else {
-//        printf("Usuário não encontrado.\n");
-//    }
-//
-//    mysql_free_result(res);
-//    return 0;
-//}
+#include "mysql_wrapper.h"  // sua wrapper MySQL em C++
 
-int main() {
-    char command[256];
-    int status = 1;
+MySQLConnection* mysql_conn = NULL;
 
-    // Inicialização do sistema
-    init_system();
+// Configuração do banco - ajuste com seus dados
+const char* server = "localhost";
+const char* user = "root";
+const char* password = "sua_senha";  // Atualize aqui
+const char* database = "commandshield_db";
+const int port = 3306;  // Porta padrão MySQL (ajuste se precisar)
 
-    // Inicializar MySQL
-    //conn = mysql_init(NULL);
-    //if (conn == NULL) {
-    //    fprintf(stderr, "mysql_init() falhou\n");
-    //    return EXIT_FAILURE;
-    //}
 
-    // Conectar no banco com dados definidos acima
- /*   if (mysql_real_connect(conn, server, user, password, database, 3306, NULL, 0) == NULL) {
-        fprintf(stderr, "mysql_real_connect() falhou:\nErro %s\n", mysql_error(conn));
-        mysql_close(conn);
-        return EXIT_FAILURE;
-    }*/
+// Função para criar tabela tbusuario se não existir
+void setup_database() {
+    printf("Verificando/criando tabela tbusuario...\n");
 
-    //printf("Conexão MySQL estabelecida!\n");
+    const char* create_users_table =
+        "CREATE TABLE IF NOT EXISTS tbusuario ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, "
+        "login VARCHAR(50) UNIQUE NOT NULL, "
+        "senha CHAR(10) NOT NULL, "
+        "data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        ")";
 
-    //// Autenticar usuário antes de continuar
-    //if (!authenticate_user(conn)) {
-    //    printf("Falha na autenticação. Programa encerrado.\n");
-    //    mysql_close(conn);
-    //    return 1;
-    //}
+    if (mysql_execute_query(mysql_conn, create_users_table) == 0) {
+        printf("✅ Tabela tbusuario pronta\n");
+    }
+    else {
+        char* error = mysql_get_last_error(mysql_conn);
+        printf("Erro ao criar tabela: %s\n", error);
+        free(error);
+        exit(1);
+    }
+}
 
-       // Autenticação de usuário
-    if (!authenticate_user()) {
-        printf("Falha na autenticação. Encerrando o programa.\n");
-        return 1;
+
+// Função para verificar se usuário existe
+int user_exists(const char* login) {
+    char query[256];
+    snprintf(query, sizeof(query), "SELECT login FROM tbusuario WHERE login='%s'", login);
+    QueryResult* result = mysql_select_query(mysql_conn, query);
+    if (!result) {
+        char* err = mysql_get_last_error(mysql_conn);
+        printf("Erro SQL: %s\n", err);
+        free(err);
+        return 0;
+    }
+    int exists = (result->rows > 0);
+    mysql_free_result(result);
+    return exists;
+}
+
+// Função que valida a senha do usuário
+int validate_password(const char* login, const char* senha_input) {
+    char query[256];
+    snprintf(query, sizeof(query), "SELECT senha FROM tbusuario WHERE login='%s'", login);
+    QueryResult* result = mysql_select_query(mysql_conn, query);
+    if (!result) {
+        char* err = mysql_get_last_error(mysql_conn);
+        printf("Erro SQL: %s\n", err);
+        free(err);
+        return 0;
+    }
+    if (result->rows == 0) {
+        mysql_free_result(result);
+        return 0; // usuário não existe
     }
 
-    // Exibir o banner de boas-vindas após autenticação bem-sucedida
-    display_welcome_banner();
+    char* senha_banco = result->data[0];
+    int is_valid = (strcmp(senha_banco, senha_input) == 0);
+    mysql_free_result(result);
+    return is_valid;
+}
 
-    // Loop simples para comandos após autenticação
-    while (status) {
-        printf("CommandShield> ");
-        if (fgets(command, sizeof(command), stdin) == NULL) {
-            printf("Erro ao ler comando. Encerrando.\n");
-            break;
+// Função para cadastrar novo usuário
+int register_user(const char* login) {
+    char senha[46];
+    while (1) {
+        printf("Digite a senha para o novo usuário (até 45 caracteres): ");
+        if (fgets(senha, sizeof(senha), stdin) == NULL) {
+            printf("Erro ao ler senha.\n");
+            return 0;
         }
+        senha[strcspn(senha, "\n")] = 0;
 
-        command[strcspn(command, "\n")] = 0;
+        int len = strlen(senha);
+        if (len == 0 || len > 45) {
+            printf("Senha inválida. Deve ter entre 1 e 45 caracteres.\n");
+            continue;
+        }
+        break;
+    }
 
-        // Ignorar comandos vazios
-        if (command[0] == '\0') {
+    char query[512];
+    snprintf(query, sizeof(query),
+        "INSERT INTO tbusuario (login, senha) VALUES ('%s', '%s')",
+        login, senha);
+
+    int ret = mysql_execute_query(mysql_conn, query);
+    if (ret != 0) {
+        char* err = mysql_get_last_error(mysql_conn);
+        printf("Erro ao cadastrar usuário: %s\n", err);
+        free(err);
+        return 0;
+    }
+    printf("Usuário '%s' cadastrado com sucesso!\n", login);
+    return 1;
+}
+
+// Função principal de autenticação com fluxo completo:
+int authenticate_user_mysql() {
+    char login[46];
+
+    while (1) {
+        printf("Login: ");
+        if (fgets(login, sizeof(login), stdin) == NULL) {
+            printf("Erro ao ler login.\n");
+            return 0;
+        }
+        login[strcspn(login, "\n")] = 0;
+
+        if (strlen(login) == 0) {
+            printf("Login não pode ser vazio.\n");
             continue;
         }
 
-        // 🔽 Processar comando
-        status = process_command(command);
+        if (user_exists(login)) {
+            // Usuário existe, pedir senha e validar
+            char senha_input[46];
+            while (1) {
+                printf("Senha (até 45 caracteres): ");
+                if (fgets(senha_input, sizeof(senha_input), stdin) == NULL) {
+                    printf("Erro ao ler senha.\n");
+                    return 0;
+                }
+                senha_input[strcspn(senha_input, "\n")] = 0;
 
-        // 🔽 Registrar log (exceto para "history")
-        if (strcmp(command, "history") != 0) {
-            log_command(command);
+                int len = strlen(senha_input);
+                if (len == 0 || len > 45) {
+                    printf("Senha inválida. Deve ter entre 1 e 45 caracteres.\n");
+                    continue;
+                }
+
+                if (validate_password(login, senha_input)) {
+                    printf("Usuário autenticado com sucesso!\n");
+                    return 1;
+                }
+                else {
+                    printf("Senha incorreta. Tente novamente.\n");
+                }
+            }
+        }
+        else {
+            // Usuário novo, perguntar se quer cadastrar
+            printf("Usuário '%s' não encontrado. Deseja cadastrar senha? (s/n): ", login);
+            char resposta = getchar();
+            while (getchar() != '\n'); // limpar buffer
+
+            if (resposta == 's' || resposta == 'S') {
+                if (register_user(login)) {
+                    return 1;
+                }
+                else {
+                    printf("Falha no cadastro. Tente novamente.\n");
+                }
+            }
+            else {
+                printf("Usuário não cadastrado, mas acesso liberado temporariamente.\n");
+                return 1;
+            }
         }
     }
+}
 
-    // Finalização do sistema
-    cleanup_system();
+// Função para inicializar conexão MySQL
+int init_mysql_connection() {
+    printf("Estabelecendo conexão com MySQL...\n");
 
-    // Pausa opcional antes de encerrar (útil se estiver executando fora do VS)
-    printf("\nPressione Enter para encerrar...");
-    getchar();
+    mysql_conn = mysql_connect(server, port, user, password, database);
 
-    // Fechar conexão com MySQL
-    //mysql_close(conn);
+    if (mysql_conn == NULL) {
+        printf("Erro: Não foi possível criar conexão MySQL\n");
+        return 0;
+    }
+
+    // Testar conexão
+    int test_result = mysql_execute_query(mysql_conn, "SELECT 1");
+    if (test_result != 0) {
+        char* error = mysql_get_last_error(mysql_conn);
+        printf("Erro de conexão MySQL: %s\n", error);
+        free(error);
+        mysql_disconnect(mysql_conn);
+        mysql_conn = NULL;
+        return 0;
+    }
+
+    printf("Conexão MySQL estabelecida com sucesso!\n");
+    return 1;
+}
+
+int main() {
+    // Inicializa sistema, conecta no banco e configura tabela
+    if (!init_mysql_connection()) {
+        printf("Falha na conexão MySQL. Encerrando.\n");
+        return 1;
+    }
+    setup_database();
+
+    // Autenticação
+    if (!authenticate_user_mysql()) {
+        printf("Falha na autenticação. Encerrando.\n");
+        mysql_disconnect(mysql_conn);
+        return 1;
+    }
+
+    // Aqui segue seu sistema depois da autenticação
+    printf("Bem-vindo ao sistema!\n");
+
+    // Fechar conexão no final
+    mysql_disconnect(mysql_conn);
     printf("Conexão MySQL fechada.\n");
-
     return 0;
 }

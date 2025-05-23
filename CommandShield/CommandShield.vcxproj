@@ -25,6 +25,7 @@
     <ClCompile Include="gerenciamento_usuarios.c" />
     <ClCompile Include="logging.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="mysql_wrapper.cpp" />
     <ClCompile Include="processador_comandos.c" />
     <ClCompile Include="teste.c" />
     <ClCompile Include="testecp.c" />
@@ -35,6 +36,7 @@
     <ClInclude Include="ferramentas_redes.h" />
     <ClInclude Include="gerenciamento_usuarios.h" />
     <ClInclude Include="logging.h" />
+    <ClInclude Include="mysql_wrapper.h" />
     <ClInclude Include="processador_comandos.h" />
     <ClInclude Include="teste.h" />
   </ItemGroup>
@@ -130,10 +132,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\verin\Downloads\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\verin\Downloads\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\lib64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Users\verin\Downloads\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\lib64\vs14\mysqlcppconnx.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
