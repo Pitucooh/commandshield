@@ -18,13 +18,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="processador_comandos.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="gerenciamento_usuarios.c">
+    <ClCompile Include="gerenciamento_usuarios.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="ajuda_usuario.c">

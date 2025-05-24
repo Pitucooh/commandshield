@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "mysql_wrapper.h"  // sua wrapper MySQL em C++
+#include <mysqlx/xdevapi.h>
 
 MySQLConnection* mysql_conn = NULL;
 

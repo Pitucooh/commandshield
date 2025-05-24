@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <mysqlx/xdevapi.h>
 
 User current_user;
 
