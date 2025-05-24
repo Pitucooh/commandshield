@@ -2,6 +2,7 @@
 
 **CommandShield** é uma ferramenta de linha de comando voltada para simulação de operações de segurança digital. Inspirado no Kali Linux, o projeto foi desenvolvido com foco educacional, permitindo que usuários executem comandos relacionados a segurança, redes e criptografia em um ambiente controlado.
 
+![entrada_sistema](commandshield.jfif)
 ---
 
 ## 🚀 Funcionalidades
