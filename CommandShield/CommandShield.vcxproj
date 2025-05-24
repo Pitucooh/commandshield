@@ -19,28 +19,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\Program Files\sqlite-amalgamation-3490200\sqlite3.c" />
     <ClCompile Include="ajuda_usuario.c" />
     <ClCompile Include="ferramentas_cripto.c" />
     <ClCompile Include="ferramentas_redes.c" />
-    <ClCompile Include="gerenciamento_usuarios.cpp" />
+    <ClCompile Include="gerenciamento_usuarios.c" />
     <ClCompile Include="logging.c" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mysql_wrapper.cpp" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
+    <ClCompile Include="sqlite_wrapper.c" />
     <ClCompile Include="teste.c" />
     <ClCompile Include="testecp.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Program Files\sqlite-amalgamation-3490200\sqlite3.h" />
     <ClInclude Include="ajuda_usuario.h" />
     <ClInclude Include="ferramentas_cripto.h" />
     <ClInclude Include="ferramentas_redes.h" />
     <ClInclude Include="gerenciamento_usuarios.h" />
     <ClInclude Include="logging.h" />
-    <ClInclude Include="mysql_wrapper.h" />
     <ClInclude Include="processador_comandos.h" />
+    <ClInclude Include="sqlite_wrapper.h" />
     <ClInclude Include="teste.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\Program Files\sqlite3.dll" />
     <None Include="guia_usuario.md" />
     <None Include="log_comandos.dat" />
     <None Include="packages.config" />
@@ -130,15 +133,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MYSQL_STATIC_CONNECTOR</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files\MySQL\mysql-connector-c++-9.3.0-winx64\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\sqlite-amalgamation-3490200</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files\MySQL\mysql-connector-c++-9.3.0-winx64\lib64\vs14</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mysqlcppconnx.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

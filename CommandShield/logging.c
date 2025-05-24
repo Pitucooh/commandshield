@@ -1,4 +1,3 @@
-// logging.c
 #include "logging.h"
 #include <stdio.h>
 #include <time.h>
@@ -9,12 +8,10 @@
 extern User current_user;
 
 void log_command(const char* command) {
-    // Não registra comandos vazios
     if (command == NULL || command[0] == '\0') {
         return;
     }
 
-    // Não registra o próprio comando history para evitar acúmulo
     if (strcmp(command, "history") == 0) {
         return;
     }
@@ -26,13 +23,11 @@ void log_command(const char* command) {
         time_t now = time(NULL);
         char time_str[100] = { 0 };
 
-        // Usar ctime_s em vez de ctime para segurança
         if (ctime_s(time_str, sizeof(time_str), &now) == 0) {
-            // Remover a quebra de linha do final do time_str
             time_str[strcspn(time_str, "\n")] = 0;
 
-            // Registrar o comando com timestamp, usuário e comando
-            fprintf(log_file, "[%s] %s: %s\n",
+            // Novo formato de log: [DATA] USER: username | COMMAND: comando
+            fprintf(log_file, "[%s] USER: %s | COMMAND: %s\n",
                 time_str,
                 current_user.username,
                 command);
@@ -50,19 +45,24 @@ void view_command_history() {
     errno_t err = fopen_s(&log_file, "command_log.txt", "r");
 
     if (log_file != NULL && err == 0) {
-        char line[256];
+        char line[512];
         int count = 0;
 
-        printf("\n=== Histórico de Comandos ===\n");
+        printf("\n=== Histórico de Comandos de %s ===\n", current_user.username);
 
-        // Ler e exibir cada linha do arquivo de log
         while (fgets(line, sizeof(line), log_file)) {
-            count++;
-            printf("%3d  %s", count, line);
+            // Verifica se a linha é do usuário atual
+            char search_pattern[100];
+            snprintf(search_pattern, sizeof(search_pattern), "USER: %s |", current_user.username);
+
+            if (strstr(line, search_pattern) != NULL) {
+                count++;
+                printf("%3d  %s", count, line);
+            }
         }
 
         if (count == 0) {
-            printf("Nenhum comando no histórico.\n");
+            printf("Nenhum comando no histórico para este usuário.\n");
         }
 
         printf("\nTotal de comandos: %d\n", count);

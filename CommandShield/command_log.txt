@@ -40,3 +40,16 @@
 [Wed May 21 19:01:17 2025] admin: comando_teste_2
 [Wed May 21 19:01:23 2025] admin: test
 [Wed May 21 19:01:47 2025] admin: test-black
+[Sat May 24 18:26:38 2025] admin: help
+[Sat May 24 18:42:49 2025] admin: help
+[Sat May 24 19:06:10 2025] vewadie: help
+[Sat May 24 19:09:38 2025] testelogin: help
+[Sat May 24 19:10:54 2025] testelogin: help
+[Sat May 24 20:06:51 2025] vewadie: help
+[Sat May 24 20:09:41 2025] USER: vewadie | COMMAND: help
+[Sat May 24 20:09:55 2025] USER: vewadie | COMMAND: encrypt oi
+[Sat May 24 20:10:14 2025] USER: vewadie | COMMAND: exit
+[Sat May 24 20:10:32 2025] USER: vewadie | COMMAND: help
+[Sat May 24 20:10:40 2025] USER: vewadie | COMMAND: encrypt oiee 3
+[Sat May 24 20:11:19 2025] USER: loginnovo | COMMAND: help
+[Sat May 24 20:11:27 2025] USER: loginnovo | COMMAND: encrypt oi 3

@@ -1,24 +1,2 @@
-﻿  ajuda_usuario.c
-  ferramentas_cripto.c
-  ferramentas_redes.c
-  logging.c
-  processador_comandos.c
-C:\Users\Victor\source\repos\cs\CommandShield\processador_comandos.c(80,9): warning C4013: 'view_command_history' indefinido; assumindo extern retornando int
-C:\Users\Victor\source\repos\cs\CommandShield\processador_comandos.c(90,9): warning C4013: 'run_black_box_tests' indefinido; assumindo extern retornando int
-  teste.c
-C:\Users\Victor\source\repos\cs\CommandShield\teste.c(72,5): warning C4013: 'log_command' indefinido; assumindo extern retornando int
-C:\Users\Victor\source\repos\cs\CommandShield\teste.c(75,5): warning C4013: 'view_command_history' indefinido; assumindo extern retornando int
-  testecp.c
-  Gerando Código...
-  gerenciamento_usuarios.cpp
-  main.cpp
-C:\Users\Victor\source\repos\cs\CommandShield\main.cpp(91,17): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-C:\Users\Victor\source\repos\cs\CommandShield\main.cpp(143,25): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-  mysql_wrapper.cpp
-C:\Users\Victor\source\repos\cs\CommandShield\mysql_wrapper.cpp(84,38): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
-C:\Users\Victor\source\repos\cs\CommandShield\mysql_wrapper.cpp(85,39): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
-  Gerando Código...
-  gtest-all.cc
-  gmock-all.cc
-  Gerando Código...
-LINK : fatal error LNK1104: não é possível abrir o arquivo 'mysqlcppconnx.lib'
+﻿  logging.c
+  CommandShield.vcxproj -> C:\Users\verin\Source\Repos\commandshield\x64\Debug\CommandShield.exe

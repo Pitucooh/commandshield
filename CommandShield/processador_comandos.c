@@ -41,11 +41,6 @@ void init_system() {
     display_welcome_banner();
 }
 
-void cleanup_system() {
-    // Libera recursos
-    printf("Finalizando CommandShield...\n");
-}
-
 int process_command(const char* command) {
     // Verifica se é comando de saída
     if (strcmp(command, "exit") == 0 || strcmp(command, "quit") == 0) {
