@@ -1,7 +1,7 @@
 #ifndef SQLITE_WRAPPER_H
 #define SQLITE_WRAPPER_H
 
-#include "sqlite3.h"
+#include "../sqlite3.h"
 
 typedef struct {
     sqlite3* db;

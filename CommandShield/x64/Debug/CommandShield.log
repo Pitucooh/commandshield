@@ -1,2 +1,21 @@
-﻿  logging.c
+﻿  sqlite3.c
+  ajuda_usuario.c
+  ferramentas_cripto.c
+  ferramentas_redes.c
+  gerenciamento_usuarios.c
+C:\Users\verin\source\repos\commandshield\CommandShield\gerenciamento_usuarios.c(130,23): warning C4013: 'sqlite_get_changes' indefinido; assumindo extern retornando int
+  logging.c
+  main.c
+  processador_comandos.c
+C:\Users\verin\source\repos\commandshield\CommandShield\processador_comandos.c(75,9): warning C4013: 'view_command_history' indefinido; assumindo extern retornando int
+C:\Users\verin\source\repos\commandshield\CommandShield\processador_comandos.c(85,9): warning C4013: 'run_black_box_tests' indefinido; assumindo extern retornando int
+  sqlite_wrapper.c
+  teste.c
+C:\Users\verin\source\repos\commandshield\CommandShield\teste.c(72,5): warning C4013: 'log_command' indefinido; assumindo extern retornando int
+C:\Users\verin\source\repos\commandshield\CommandShield\teste.c(75,5): warning C4013: 'view_command_history' indefinido; assumindo extern retornando int
+  testecp.c
+  Gerando Código...
+  gtest-all.cc
+  gmock-all.cc
+  Gerando Código...
   CommandShield.vcxproj -> C:\Users\verin\Source\Repos\commandshield\x64\Debug\CommandShield.exe
