@@ -62,18 +62,8 @@ int init_sqlite_connection() {
     return 1; // Sucesso
 }
 
-// Função para limpar recursos do sistema (incluindo desconexão do DB)
-void cleanup_system() {
-    printf("Finalizando CommandShield...\n");
-    // Libera outros recursos se houver
-
-    // Desconecta do banco de dados se a conexão foi estabelecida
-    if (sqlite_conn != NULL) {
-        sqlite_disconnect(sqlite_conn);
-        sqlite_conn = NULL;
-    }
-}
-
+// REMOVIDA a implementação duplicada de cleanup_system
+// A função está implementada em processador_comandos.c
 
 int main() {
     char command[256];
@@ -130,4 +120,3 @@ int main() {
     printf("Programa encerrado.\n");
     return 0;
 }
-

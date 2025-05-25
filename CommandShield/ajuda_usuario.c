@@ -16,6 +16,14 @@ void show_help_menu() {
     printf("CRIPTOGRAFIA:\n");
     printf("  encrypt [texto] [chave] - Criptografa um texto usando chave numérica\n");
     printf("  decrypt [texto] [chave] - Descriptografa um texto usando chave numérica\n\n");
+    printf("HARDWARE:\n");
+    printf("  drivers              - Lista os drivers de dispositivo carregados no sistema\n");
+    printf("  meminfo              - Mostra informações detalhadas sobre a memória do sistema\n");
+    printf("  cpuinfo              - Mostra informações sobre o processador\n");
+    printf("  diskinfo             - Mostra informações sobre os discos do sistema\n");
+    printf("  netinfo              - Mostra informações sobre adaptadores e conexões de rede\n");
+    printf("  usbinfo              - Lista dispositivos USB conectados\n");
+    printf("  procinfo             - Mostra processos em execução no sistema\n\n");
     printf("HISTÓRICO:\n");
     printf("  history              - Mostra histórico de comandos executados\n\n");
     printf("Digite 'help [comando]' para obter informações detalhadas sobre um comando específico.\n");
@@ -51,6 +59,55 @@ void show_command_help(const char* command) {
         printf("\n=== Ajuda: history ===\n");
         printf("Uso: history\n\n");
         printf("Descrição: Mostra o histórico de comandos executados na sessão atual.\n");
+    }
+    else if (strcmp(command, "drivers") == 0) {
+        printf("\n=== Ajuda: drivers ===\n");
+        printf("Uso: drivers\n\n");
+        printf("Descrição: Lista todos os drivers de dispositivo carregados no sistema operacional.\n");
+        printf("Este comando utiliza o utilitário driverquery do Windows para obter informações sobre os drivers ativos.\n");
+        printf("Nota: Requer privilégios de administrador para funcionar corretamente.\n");
+    }
+    else if (strcmp(command, "meminfo") == 0) {
+        printf("\n=== Ajuda: meminfo ===\n");
+        printf("Uso: meminfo\n\n");
+        printf("Descrição: Exibe informações detalhadas sobre a memória do sistema.\n");
+        printf("Mostra dados como memória física total, disponível e em uso, memória virtual e informações de paginação.\n");
+        printf("Os valores são exibidos em MB e GB para facilitar a leitura.\n");
+    }
+    else if (strcmp(command, "cpuinfo") == 0) {
+        printf("\n=== Ajuda: cpuinfo ===\n");
+        printf("Uso: cpuinfo\n\n");
+        printf("Descrição: Exibe informações detalhadas sobre o processador do sistema.\n");
+        printf("Mostra dados como modelo do processador, número de núcleos físicos e lógicos,\n");
+        printf("velocidade máxima e uso atual da CPU.\n");
+    }
+    else if (strcmp(command, "diskinfo") == 0) {
+        printf("\n=== Ajuda: diskinfo ===\n");
+        printf("Uso: diskinfo\n\n");
+        printf("Descrição: Exibe informações sobre os discos e volumes do sistema.\n");
+        printf("Mostra dados como letra da unidade, sistema de arquivos, tamanho total,\n");
+        printf("espaço livre e espaço usado (em GB e porcentagem).\n");
+    }
+    else if (strcmp(command, "netinfo") == 0) {
+        printf("\n=== Ajuda: netinfo ===\n");
+        printf("Uso: netinfo\n\n");
+        printf("Descrição: Exibe informações sobre os adaptadores de rede e conexões.\n");
+        printf("Mostra dados como nome do adaptador, endereço MAC, endereços IP,\n");
+        printf("gateway e estatísticas de tráfego de rede.\n");
+    }
+    else if (strcmp(command, "usbinfo") == 0) {
+        printf("\n=== Ajuda: usbinfo ===\n");
+        printf("Uso: usbinfo\n\n");
+        printf("Descrição: Lista todos os dispositivos USB conectados ao sistema.\n");
+        printf("Mostra dados como descrição do dispositivo, ID de hardware e fabricante.\n");
+        printf("Nota: Requer privilégios de administrador para informações completas.\n");
+    }
+    else if (strcmp(command, "procinfo") == 0) {
+        printf("\n=== Ajuda: procinfo ===\n");
+        printf("Uso: procinfo\n\n");
+        printf("Descrição: Lista todos os processos em execução no sistema.\n");
+        printf("Mostra dados como ID do processo (PID), nome do executável e número de threads.\n");
+        printf("Nota: Requer privilégios de administrador para informações completas.\n");
     }
     else {
         printf("Ajuda não disponível para o comando '%s'. Digite 'help' para ver a lista de comandos.\n", command);

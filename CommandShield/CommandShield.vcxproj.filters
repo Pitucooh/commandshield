@@ -18,13 +18,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="processador_comandos.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="gerenciamento_usuarios.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="ajuda_usuario.c">
@@ -51,7 +45,19 @@
     <ClCompile Include="testecp.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="mysql_wrapper.cpp">
+    <ClCompile Include="..\..\..\..\..\..\Program Files\sqlite-amalgamation-3490200\sqlite3.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciamento_usuarios.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite_wrapper.c">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="Info_Hardware.c">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,7 +83,13 @@
     <ClInclude Include="teste.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="mysql_wrapper.h">
+    <ClInclude Include="..\..\..\..\..\..\Program Files\sqlite-amalgamation-3490200\sqlite3.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite_wrapper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Info_Hardware.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,5 +102,6 @@
     <None Include="log_comandos.dat">
       <Filter>src</Filter>
     </None>
+    <None Include="..\..\..\..\..\..\Program Files\sqlite3.dll" />
   </ItemGroup>
 </Project>

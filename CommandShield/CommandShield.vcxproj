@@ -24,6 +24,7 @@
     <ClCompile Include="ferramentas_cripto.c" />
     <ClCompile Include="ferramentas_redes.c" />
     <ClCompile Include="gerenciamento_usuarios.c" />
+    <ClCompile Include="Info_Hardware.c" />
     <ClCompile Include="logging.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
@@ -37,6 +38,7 @@
     <ClInclude Include="ferramentas_cripto.h" />
     <ClInclude Include="ferramentas_redes.h" />
     <ClInclude Include="gerenciamento_usuarios.h" />
+    <ClInclude Include="Info_Hardware.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="processador_comandos.h" />
     <ClInclude Include="sqlite_wrapper.h" />
