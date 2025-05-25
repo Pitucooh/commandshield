@@ -1,6 +1,8 @@
 # 🛡️ CommandShield
 
-**CommandShield** é uma ferramenta de linha de comando voltada para simulação de operações de segurança digital. Inspirado no Kali Linux, o projeto foi desenvolvido com foco educacional, permitindo que usuários executem comandos relacionados a segurança, redes e criptografia em um ambiente controlado.
+O **CommandShield** é um projeto acadêmico desenvolvido em C que simula ferramentas de segurança em escala reduzida, inspirado em distribuições como Kali Linux. O projeto implementa uma interface de linha de comando modular que permite executar diversas funções relacionadas à segurança da informação.
+
+Este projeto foi desenvolvido com foco educacional para demonstrar conceitos de segurança cibernética, ferramentas de análise de rede e interação com o sistema operacional Windows.
 
 ![entrada_sistema](commandshield.jfif)
 ---
@@ -20,21 +22,33 @@
 
 ### Pré-requisitos
 
-- Sistema Unix-like (Linux, MacOS, WSL no Windows)  
-- Compilador `gcc` instalado  
+- Arquitetura Windows  
+- Compilação via Visual Studio
+- SQLite instalado nos Arquivos de Programa
 
 ### Compilação
-
+1. Clone o repositório:
 ```bash
-gcc main.c *.c -o commandshield
+git clone https://github.com/Pitucooh/commandshield.git
+cd commandshield
 ```
-
+2. Abra o projeto:
+   - Localize e abra o arquivo .sln com o Visual Studio.
+3. Selecione a configuração:
+   - No topo do Visual Studio, escolha entre Debug ou Release.
+   - Selecione a plataforma: x86, x64 ou outra conforme o caso.
+4. Compile o projeto:
+   - No menu: Build → Build Solution (Ctrl+Shift+B)
 ### Execução
-
+1. Abra o terminal (Prompt de Comando ou PowerShell).
+2. Navegue até a pasta onde está o .exe:
 ```bash
-./commandshield
+cd "C:\Users\usuario\source\repos\CommandShield\x64\Debug"
 ```
-
+3. Execute o programa:
+```bash
+.\CommandShield.exe
+```
 ---
 
 ## 👨‍💻 Contribuidores
