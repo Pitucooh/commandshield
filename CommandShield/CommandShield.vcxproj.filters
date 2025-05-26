@@ -60,6 +60,12 @@
     <ClCompile Include="Info_Hardware.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="quebrasenha.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="forcasenha.c">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="processador_comandos.h">
@@ -90,6 +96,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="Info_Hardware.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="quebrasenha.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="forcasenha.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

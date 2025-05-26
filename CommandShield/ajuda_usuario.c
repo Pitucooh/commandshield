@@ -16,6 +16,9 @@ void show_help_menu() {
     printf("CRIPTOGRAFIA:\n");
     printf("  encrypt [texto] [chave] - Criptografa um texto usando chave numérica\n");
     printf("  decrypt [texto] [chave] - Descriptografa um texto usando chave numérica\n\n");
+    printf("SEGURANÇA:\n");
+    printf(" quebra-senha - blablabla\n");
+    printf(" forca-senha - blablabla \n\n");
     printf("HARDWARE:\n");
     printf("  drivers              - Lista os drivers de dispositivo carregados no sistema\n");
     printf("  meminfo              - Mostra informações detalhadas sobre a memória do sistema\n");

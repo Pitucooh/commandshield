@@ -9,6 +9,9 @@
 #include "logging.h"
 #include "Info_Hardware.h"
 #include "teste.h"
+#include "forcasenha.h"
+#include "quebrasenha.h"
+
 
 void display_welcome_banner() {
     printf("\n");
@@ -118,6 +121,16 @@ int process_command(const char* command) {
     if (strcmp(command, "test-black") == 0) {
         // run_black_box_tests(); // Chamada comentada se não implementada
         printf("Comando 'test-black' reconhecido (implementação pendente).\n");
+        return 1;
+    }
+    // teste para quebrar senha
+    if (strcmp(command, "quebra-senha") == 0) {
+        iniciar_quebra_senha();
+        return 1;
+    }
+    // teste para força da senha
+    if (strcmp(command, "forca-senha") == 0) {
+        iniciar_forca_da_senha();
         return 1;
     }
 

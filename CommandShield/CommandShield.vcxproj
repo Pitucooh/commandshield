@@ -23,11 +23,13 @@
     <ClCompile Include="ajuda_usuario.c" />
     <ClCompile Include="ferramentas_cripto.c" />
     <ClCompile Include="ferramentas_redes.c" />
+    <ClCompile Include="forcasenha.c" />
     <ClCompile Include="gerenciamento_usuarios.c" />
     <ClCompile Include="Info_Hardware.c" />
     <ClCompile Include="logging.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="processador_comandos.c" />
+    <ClCompile Include="quebrasenha.c" />
     <ClCompile Include="sqlite_wrapper.c" />
     <ClCompile Include="teste.c" />
     <ClCompile Include="testecp.c" />
@@ -37,10 +39,12 @@
     <ClInclude Include="ajuda_usuario.h" />
     <ClInclude Include="ferramentas_cripto.h" />
     <ClInclude Include="ferramentas_redes.h" />
+    <ClInclude Include="forcasenha.h" />
     <ClInclude Include="gerenciamento_usuarios.h" />
     <ClInclude Include="Info_Hardware.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="processador_comandos.h" />
+    <ClInclude Include="quebrasenha.h" />
     <ClInclude Include="sqlite_wrapper.h" />
     <ClInclude Include="teste.h" />
   </ItemGroup>
