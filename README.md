@@ -14,7 +14,8 @@ Este projeto foi desenvolvido com foco educacional para demonstrar conceitos de 
 - 📡 Ferramentas de análise de redes  
 - 🔑 Operações básicas de criptografia  
 - ⌨️ Simulação de comandos shell com interpretação personalizada  
-- 🗂️ Estrutura modular para facilitar a manutenção e expansão  
+- 🗂️ Estrutura modular para facilitar a manutenção e expansão
+- 🔓 Quebra de senha
 
 ---
 
