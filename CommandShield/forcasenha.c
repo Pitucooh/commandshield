@@ -20,20 +20,25 @@ void forca_da_senha(char senha[]) {
             numero++;
         if (ispunct(senha[i])) // contador para caracter especial
             caracterEspecial++;
-        i++;
     }
     // testes para a força da senha e com dicas
     if (tamanhoSenha < 8) {
         printf("Senha MUITO FRACA (Recomendado adicionar MAIS letras, letras maiúsculas, números e caracteres especiais)\n");
     }
-    if (tamanhoSenha <= 8 && letraMaiuscula == 0 && caracterEspecial == 0) {
+    else if (tamanhoSenha <= 8 && letraMaiuscula == 0 && caracterEspecial == 0) {
         printf("Senha FRACA (Recomendado adicionar caracteres especiais)\n");
     }
-    if (tamanhoSenha >= 8 && tamanhoSenha < 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
-        printf("Senha BOA\n");
+    else if (tamanhoSenha >= 8 && tamanhoSenha < 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
+        printf("Senha BOA (Recomendado adicionar números e caracteres especiais)\n");
     }
-    if (tamanhoSenha >= 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
+    else if (tamanhoSenha >= 12) {
         printf("Senha FORTE\n");
+    }
+    else if (tamanhoSenha >= 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
+        printf("Senha MUITO FORTE\n");
+    }
+    else {
+        printf("Senha BOA (Recomendado adicionar números e caracteres especiais)\n");
     }
 }
 
