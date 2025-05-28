@@ -140,3 +140,40 @@
 [Tue May 27 19:18:16 2025] USER: VictorSexy | COMMAND: forca-senha
 [Tue May 27 19:18:21 2025] USER: VictorSexy | COMMAND: exit
 [Tue May 27 19:18:21 2025] USER: VictorSexy | COMMAND: exit
+[Wed May 28 20:08:25 2025] USER: VictorSexy | COMMAND: help
+[Wed May 28 20:08:25 2025] USER: VictorSexy | COMMAND: help
+[Wed May 28 20:08:33 2025] USER: VictorSexy | COMMAND: forca-senha
+[Wed May 28 20:10:16 2025] USER: VictorSexy | COMMAND: help
+[Wed May 28 20:10:16 2025] USER: VictorSexy | COMMAND: help
+[Wed May 28 20:10:25 2025] USER: VictorSexy | COMMAND: forca-senha
+[Wed May 28 20:10:30 2025] USER: VictorSexy | COMMAND: forca-senha
+[Wed May 28 20:11:12 2025] USER: VictorSexy | COMMAND: forca-senha
+[Wed May 28 20:11:24 2025] USER: VictorSexy | COMMAND: forca-senha
+[Wed May 28 20:17:18 2025] USER: eu | COMMAND: forca-senha
+[Wed May 28 20:17:22 2025] USER: eu | COMMAND: forca-senha
+[Wed May 28 20:21:01 2025] USER: eu | COMMAND: exit
+[Wed May 28 20:21:01 2025] USER: eu | COMMAND: exit
+[Wed May 28 20:25:05 2025] USER: eu | COMMAND: exit
+[Wed May 28 20:25:05 2025] USER: eu | COMMAND: exit
+[Wed May 28 20:25:50 2025] USER: eu | COMMAND: help
+[Wed May 28 20:25:50 2025] USER: eu | COMMAND: help
+[Wed May 28 20:26:32 2025] USER: eu | COMMAND: ping 8.8.8.8
+[Wed May 28 20:26:53 2025] USER: eu | COMMAND: ping 8.8.8.8
+[Wed May 28 20:27:13 2025] USER: eu | COMMAND: encrypt
+[Wed May 28 20:27:13 2025] USER: eu | COMMAND: encrypt
+[Wed May 28 20:27:46 2025] USER: eu | COMMAND: encrypt HelloWorld 17
+[Wed May 28 20:27:46 2025] USER: eu | COMMAND: encrypt HelloWorld 17
+[Wed May 28 20:28:15 2025] USER: eu | COMMAND: cpuinfo
+[Wed May 28 20:28:16 2025] USER: eu | COMMAND: cpuinfo
+[Wed May 28 20:28:23 2025] USER: eu | COMMAND: meminfo
+[Wed May 28 20:28:23 2025] USER: eu | COMMAND: meminfo
+[Wed May 28 20:29:26 2025] USER: eu | COMMAND: diskinfo
+[Wed May 28 20:29:26 2025] USER: eu | COMMAND: diskinfo
+[Wed May 28 20:29:50 2025] USER: eu | COMMAND: netinfo
+[Wed May 28 20:29:50 2025] USER: eu | COMMAND: netinfo
+[Wed May 28 20:30:17 2025] USER: eu | COMMAND: usbinfo
+[Wed May 28 20:30:17 2025] USER: eu | COMMAND: usbinfo
+[Wed May 28 20:30:45 2025] USER: eu | COMMAND: procinfo
+[Wed May 28 20:30:46 2025] USER: eu | COMMAND: procinfo
+[Wed May 28 20:31:09 2025] USER: eu | COMMAND: drivers
+[Wed May 28 20:31:15 2025] USER: eu | COMMAND: drivers

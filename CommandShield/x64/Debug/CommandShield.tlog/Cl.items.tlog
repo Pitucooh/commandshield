@@ -1,16 +1,16 @@
-C:\Program Files\sqlite-amalgamation-3490200\sqlite3.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\sqlite3.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\ajuda_usuario.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\ajuda_usuario.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\ferramentas_cripto.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\ferramentas_cripto.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\ferramentas_redes.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\ferramentas_redes.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\forcasenha.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\forcasenha.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\gerenciamento_usuarios.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\gerenciamento_usuarios.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\Info_Hardware.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\Info_Hardware.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\logging.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\logging.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\main.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\main.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\processador_comandos.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\processador_comandos.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\quebrasenha.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\quebrasenha.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\sqlite_wrapper.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\sqlite_wrapper.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\teste.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\teste.obj
-C:\Users\hbapt\source\repos\CommandShield2\CommandShield\testecp.c;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\testecp.obj
-C:\Users\hbapt\source\repos\CommandShield2\packages\gmock.1.11.0\lib\native\src\gtest\gtest-all.cc;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\gtest-all.obj
-C:\Users\hbapt\source\repos\CommandShield2\packages\gmock.1.11.0\lib\native\src\gmock\gmock-all.cc;C:\Users\hbapt\source\repos\CommandShield2\CommandShield\x64\Debug\gmock-all.obj
+C:\Program Files\sqlite-amalgamation-3490200\sqlite3.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\sqlite3.obj
+C:\Users\Victor\source\repos\bill\CommandShield\ajuda_usuario.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\ajuda_usuario.obj
+C:\Users\Victor\source\repos\bill\CommandShield\ferramentas_cripto.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\ferramentas_cripto.obj
+C:\Users\Victor\source\repos\bill\CommandShield\ferramentas_redes.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\ferramentas_redes.obj
+C:\Users\Victor\source\repos\bill\CommandShield\forcasenha.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\forcasenha.obj
+C:\Users\Victor\source\repos\bill\CommandShield\gerenciamento_usuarios.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\gerenciamento_usuarios.obj
+C:\Users\Victor\source\repos\bill\CommandShield\Info_Hardware.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\Info_Hardware.obj
+C:\Users\Victor\source\repos\bill\CommandShield\logging.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\logging.obj
+C:\Users\Victor\source\repos\bill\CommandShield\main.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\main.obj
+C:\Users\Victor\source\repos\bill\CommandShield\processador_comandos.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\processador_comandos.obj
+C:\Users\Victor\source\repos\bill\CommandShield\quebrasenha.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\quebrasenha.obj
+C:\Users\Victor\source\repos\bill\CommandShield\sqlite_wrapper.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\sqlite_wrapper.obj
+C:\Users\Victor\source\repos\bill\CommandShield\teste.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\teste.obj
+C:\Users\Victor\source\repos\bill\CommandShield\testecp.c;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\testecp.obj
+C:\Users\Victor\source\repos\bill\packages\gmock.1.11.0\lib\native\src\gtest\gtest-all.cc;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\gtest-all.obj
+C:\Users\Victor\source\repos\bill\packages\gmock.1.11.0\lib\native\src\gmock\gmock-all.cc;C:\Users\Victor\source\repos\bill\CommandShield\x64\Debug\gmock-all.obj

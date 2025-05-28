@@ -4,7 +4,7 @@
 #include <string.h>
 
 void forca_da_senha(char senha[]) {
-    // variáveis para analisar o nível de força da senha
+    // variÃ¡veis para analisar o nÃ­vel de forÃ§a da senha
     int tamanhoSenha = strlen(senha);
     int letraMinuscula = 0;
     int letraMaiuscula = 0;
@@ -12,40 +12,34 @@ void forca_da_senha(char senha[]) {
     int caracterEspecial = 0;
 
     for (int i = 0; senha[i]; i++) {
-        if (islower(senha[i])) // contador para letra minúscula
+        if (islower(senha[i])) // contador para letra minÃºscula
             letraMinuscula++;
-        if (isupper(senha[i])) // contador para letra maiúscula
+        if (isupper(senha[i])) // contador para letra maiÃºscula
             letraMaiuscula++;
-        if (isdigit(senha[i])) // contador para número
+        if (isdigit(senha[i])) // contador para nÃºmero
             numero++;
         if (ispunct(senha[i])) // contador para caracter especial
             caracterEspecial++;
     }
-    // testes para a força da senha e com dicas
+    // testes para a forÃ§a da senha e com dicas
     if (tamanhoSenha < 8) {
-        printf("Senha MUITO FRACA (Recomendado adicionar MAIS letras, letras maiúsculas, números e caracteres especiais)\n");
+        printf("Senha MUITO FRACA (Recomendado adicionar MAIS letras, letras maiÃºsculas, nÃºmeros e caracteres especiais)\n");
     }
     else if (tamanhoSenha <= 8 && letraMaiuscula == 0 && caracterEspecial == 0) {
-        printf("Senha FRACA (Recomendado adicionar caracteres especiais)\n");
+        printf("Senha FRACA (Recomendado adicionar letras maiÃºsculas, nÃºmeros e caracteres especiais)\n");
     }
     else if (tamanhoSenha >= 8 && tamanhoSenha < 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
-        printf("Senha BOA (Recomendado adicionar números e caracteres especiais)\n");
-    }
-    else if (tamanhoSenha >= 12) {
-        printf("Senha FORTE\n");
-    }
-    else if (tamanhoSenha >= 12 && letraMinuscula >= 1 && letraMaiuscula >= 1 && numero >= 1 && caracterEspecial >= 1) {
-        printf("Senha MUITO FORTE\n");
+        printf("Senha BOA (Recomendado adicionar nÃºmeros e caracteres especiais)\n");
     }
     else {
-        printf("Senha BOA (Recomendado adicionar números e caracteres especiais)\n");
+        printf("Senha MUITO FORTE\n");
     }
 }
 
 void iniciar_forca_da_senha() {
     char senha[SENHA_MAX];
 
-    printf("Digite a senha a ser testada o nível de força (até %d caracteres): ", SENHA_MAX);
+    printf("Digite a senha a ser testada o nÃ­vel de forÃ§a (atÃ© %d caracteres): ", SENHA_MAX);
     scanf_s("%s", senha, (unsigned)sizeof(senha));
 
     forca_da_senha(senha);
