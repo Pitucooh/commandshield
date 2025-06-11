@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Incluir stddef.h para _TRUNCATE se não estiver incluído por outros headers no MSVC
 #ifdef _MSC_VER
 #include <stddef.h>
-// Incluir definição de strcpy_s se não estiver em string.h por padrão
 #if !defined(__STDC_LIB_EXT1__)
 #include <errno.h>
+
 // Definição simples de strcpy_s para compatibilidade básica se não existir
 static inline errno_t strcpy_s(char* dest, size_t destsz, const char* src) {
     if (dest == NULL || destsz == 0 || src == NULL) return EINVAL;
@@ -30,8 +29,10 @@ SQLiteConnection* sqlite_connect(const char* db_path) {
 
     conn->last_error = NULL;
 
+    // Tenta abrir o arquivo do banco
     int rc = sqlite3_open(db_path, &conn->db);
     if (rc != SQLITE_OK) {
+        // Se deu erro, salva a mensagem de erro
         const char* error_msg = sqlite3_errmsg(conn->db);
         size_t len = strlen(error_msg) + 1;
         conn->last_error = malloc(len);
@@ -44,9 +45,6 @@ SQLiteConnection* sqlite_connect(const char* db_path) {
 #endif
         }
         sqlite3_close(conn->db); // Fecha mesmo em caso de erro de abertura
-        // free(conn->last_error); // Não liberar aqui, pois é retornado implicitamente
-        // free(conn); // Não liberar conn aqui, pois o ponteiro NULL será retornado
-        // Correção: Liberar conn se last_error foi alocado, senão vaza memória
         if (conn->last_error == NULL) free(conn);
         return NULL; // Retorna NULL em caso de erro
     }
@@ -80,9 +78,11 @@ int sqlite_execute_query(SQLiteConnection* conn, const char* query) {
     }
 
     char* error_msg = NULL;
+    // Executa comandos que não retornam dados
     int rc = sqlite3_exec(conn->db, query, NULL, NULL, &error_msg);
 
     if (rc != SQLITE_OK) {
+        // Guarda o erro se deu problema
         if (error_msg) {
             size_t len = strlen(error_msg) + 1;
             conn->last_error = malloc(len);
@@ -102,7 +102,7 @@ int sqlite_execute_query(SQLiteConnection* conn, const char* query) {
     return 0;
 }
 
-// Callback para sqlite3_exec nas consultas SELECT
+// Consultas SELECT
 static int select_callback(void* data, int argc, char** argv, char** col_names) {
     SQLiteResult* result = (SQLiteResult*)data;
 
@@ -133,11 +133,8 @@ static int select_callback(void* data, int argc, char** argv, char** col_names) 
     }
 
     // Realocar array de dados para a nova linha
-    // Usar ponteiro temporário para evitar vazamento em caso de falha de realloc
     char** temp_data = realloc(result->data, (result->rows + 1) * result->cols * sizeof(char*));
     if (!temp_data) {
-        // Erro de realocação, dados anteriores ainda em result->data
-        // Idealmente, liberar memória já alocada para a linha atual se houver
         return 1; // Sinaliza erro
     }
     result->data = temp_data;
@@ -160,7 +157,6 @@ static int select_callback(void* data, int argc, char** argv, char** col_names) 
                 // Tratar erro de alocação para dado individual
                 // Liberar memória alocada para esta linha até agora
                 for (int k = 0; k < i; ++k) free(result->data[result->rows * result->cols + k]);
-                // Reduzir o tamanho do realloc? Ou apenas retornar erro?
                 return 1;
             }
         }
@@ -169,7 +165,7 @@ static int select_callback(void* data, int argc, char** argv, char** col_names) 
             result->data[index] = malloc(1);
             if (result->data[index])
                 result->data[index][0] = '\0';
-            else return 1; // Erro de alocação
+            else return 1; 
         }
     }
 
@@ -214,13 +210,6 @@ SQLiteResult* sqlite_select_query(SQLiteConnection* conn, const char* query) {
         sqlite_free_result(result); // Libera o que foi alocado antes do erro
         return NULL;
     }
-    // Se sqlite3_exec retornou OK mas o callback falhou (e.g., alocação), o resultado pode estar incompleto
-    // A função callback retorna não-zero em caso de erro, o que aborta sqlite3_exec.
-    // Se rc == SQLITE_OK, o callback sempre retornou 0.
-
-    // Se a query não retornou linhas, result->rows será 0, mas result não será NULL.
-    // Se não retornou colunas (ex: SELECT 1 WHERE 0), result->cols será 0.
-
     return result;
 }
 
@@ -250,8 +239,8 @@ void sqlite_free_result(SQLiteResult* result) {
 
 // Retorna último erro
 char* sqlite_get_last_error(SQLiteConnection* conn) {
-    if (!conn) return NULL; // Se conn é NULL, não há erro para copiar
-    if (!conn->last_error) return NULL; // Se não há erro registrado, retorna NULL
+    if (!conn) return NULL; 
+    if (!conn->last_error) return NULL; 
 
     size_t len = strlen(conn->last_error) + 1;
     char* error_copy = malloc(len);
@@ -263,15 +252,12 @@ char* sqlite_get_last_error(SQLiteConnection* conn) {
         error_copy[len - 1] = '\0';
 #endif
     }
-    return error_copy; // Retorna cópia do erro ou NULL se malloc falhar
+    return error_copy; 
 }
 
-// *** NOVA FUNÇÃO IMPLEMENTADA ***
 // Retorna o número de linhas afetadas pela última query (INSERT, UPDATE, DELETE)
 int sqlite_get_changes(SQLiteConnection* conn) {
     if (!conn || !conn->db) {
-        // Opcional: Definir um erro ou retornar um valor específico como -1
-        // Definindo erro para consistência com outras funções
         if (conn && conn->last_error) {
             free(conn->last_error);
             conn->last_error = NULL;
@@ -289,7 +275,7 @@ int sqlite_get_changes(SQLiteConnection* conn) {
 #endif
             }
         }
-        return -1; // Retorna -1 em caso de erro de conexão
+        return -1; 
     }
     // Chama a função da API C do SQLite
     return sqlite3_changes(conn->db);

@@ -3,11 +3,13 @@
 
 #include "../sqlite3.h"
 
+// Representa a conexão com o banco
 typedef struct {
     sqlite3* db;
     char* last_error;
 } SQLiteConnection;
 
+// Representa resultados de consultas SELECT
 typedef struct {
     int rows;
     int cols;

@@ -1,5 +1,1 @@
-﻿  forcasenha.c
-C:\Users\Victor\source\repos\bill\CommandShield\forcasenha.c(8,24): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-  processador_comandos.c
-  Gerando Código...
-  CommandShield.vcxproj -> C:\Users\Victor\source\repos\bill\x64\Debug\CommandShield.exe
+﻿  CommandShield.vcxproj -> C:\Users\verin\Source\Repos\commandshield\x64\Debug\CommandShield.exe
