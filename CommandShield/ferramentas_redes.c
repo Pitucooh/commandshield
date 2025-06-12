@@ -6,7 +6,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>  // Para inet_pton e getaddrinfo
 
-// Precisamos linkar com ws2_32.lib
+// linkar com ws2_32.lib (é padrão)
 #pragma comment(lib, "ws2_32.lib")
 
 int handle_network_scan(const char* command) {
@@ -51,7 +51,7 @@ int handle_network_scan(const char* command) {
         }
     }
 
-    // Se chegou aqui, o comando não foi reconhecido como scan ou ping
+    // Se chegou aqui, tá errado
     printf("Comando de rede não reconhecido. Use 'scan' ou 'ping'.\n");
     printf("Exemplos:\n");
     printf("  scan 192.168.1.1 1 1000 - Escaneia portas de 1 a 1000\n");
@@ -223,7 +223,7 @@ int ping_host(const char* host) {
         closesocket(sock);
     }
 
-    // Se nenhuma porta respondeu, vamos tentar um teste mais simples
+    // Se nenhuma porta respondeu, plano b
     if (!result) {
         printf("Nenhuma porta respondeu. Verificando se o IP é alcançável...\n");
 

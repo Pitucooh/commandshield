@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <psapi.h>
+#include <stdlib.h> // Adicionado para atof
 
 // Função para listar os drivers de dispositivo
 void list_device_drivers() {
@@ -20,7 +21,7 @@ void list_device_drivers() {
         return;
     }
 
-    // Ler a primeira linha (cabeçalho) e descartá-la
+    // Ler a primeira linha e descartá-la
     if (fgets(line, sizeof(line), fp) == NULL) {
         printf("Erro ao ler a saída do comando driverquery.\n");
         _pclose(fp);
@@ -86,14 +87,14 @@ void show_memory_info() {
 
         printf("Uso de memória: %lu%%\n", memInfo.dwMemoryLoad);
         printf("\nMemória Física (RAM):\n");
-        printf("  Total:      %.2f MB (%.2f GB)\n", totalPhysMB, totalPhysMB / 1024);
+        printf("  Total:       %.2f MB (%.2f GB)\n", totalPhysMB, totalPhysMB / 1024);
         printf("  Disponível: %.2f MB (%.2f GB)\n", availPhysMB, availPhysMB / 1024);
-        printf("  Em uso:     %.2f MB (%.2f GB)\n", usedPhysMB, usedPhysMB / 1024);
+        printf("  Em uso:      %.2f MB (%.2f GB)\n", usedPhysMB, usedPhysMB / 1024);
 
         printf("\nMemória Virtual:\n");
-        printf("  Total:      %.2f MB (%.2f GB)\n", totalVirtualMB, totalVirtualMB / 1024);
+        printf("  Total:       %.2f MB (%.2f GB)\n", totalVirtualMB, totalVirtualMB / 1024);
         printf("  Disponível: %.2f MB (%.2f GB)\n", availVirtualMB, availVirtualMB / 1024);
-        printf("  Em uso:     %.2f MB (%.2f GB)\n", usedVirtualMB, usedVirtualMB / 1024);
+        printf("  Em uso:      %.2f MB (%.2f GB)\n", usedVirtualMB, usedVirtualMB / 1024);
 
         // Informações sobre paginação
         PERFORMANCE_INFORMATION perfInfo;
@@ -103,9 +104,9 @@ void show_memory_info() {
             SIZE_T commitLimit = perfInfo.CommitLimit * pageSize / (1024 * 1024);
 
             printf("\nInformações de Paginação:\n");
-            printf("  Tamanho da página:    %lu bytes\n", (unsigned long)pageSize);
-            printf("  Total comprometido:   %lu MB\n", (unsigned long)commitTotal);
-            printf("  Limite de commit:     %lu MB\n", (unsigned long)commitLimit);
+            printf("  Tamanho da página:   %lu bytes\n", (unsigned long)pageSize);
+            printf("  Total comprometido:  %lu MB\n", (unsigned long)commitTotal);
+            printf("  Limite de commit:    %lu MB\n", (unsigned long)commitLimit);
         }
     }
     else {
@@ -129,20 +130,18 @@ void show_cpu_info() {
         return;
     }
 
-    // Pular a linha em branco
     fgets(line, sizeof(line), fp);
-
     // Ler a linha de cabeçalho
     fgets(line, sizeof(line), fp);
 
     // Ler os dados da CPU
     if (fgets(line, sizeof(line), fp) != NULL) {
-        char* token = strtok(line, ",");  // Pular o nome do nó
+        char* token = strtok(line, ",");  // Pular o nome do node
 
+        char* speed = strtok(NULL, ",");
         char* name = strtok(NULL, ",");
         char* cores = strtok(NULL, ",");
         char* logical = strtok(NULL, ",");
-        char* speed = strtok(NULL, ",");
 
         if (name && cores && logical && speed) {
             // Remover caracteres de nova linha
@@ -161,30 +160,54 @@ void show_cpu_info() {
     _pclose(fp);
 
     // Obter informações de uso da CPU
-    fp = _popen("wmic cpu get LoadPercentage /format:csv", "r");
-    if (fp == NULL) {
-        printf("Erro ao obter uso da CPU.\n");
-    }
-    else {
-        // Pular linhas iniciais
-        fgets(line, sizeof(line), fp);
-        fgets(line, sizeof(line), fp);
+    FILETIME ft_idle, ft_kernel, ft_user;
+    ULARGE_INTEGER ul_idle_initial, ul_kernel_initial, ul_user_initial;
 
-        if (fgets(line, sizeof(line), fp) != NULL) {
-            char* token = strtok(line, ",");  // Pular o nome do nó
-            char* usage = strtok(NULL, ",");
+    if (GetSystemTimes(&ft_idle, &ft_kernel, &ft_user)) {
+        ul_idle_initial.LowPart = ft_idle.dwLowDateTime;
+        ul_idle_initial.HighPart = ft_idle.dwHighDateTime;
+        ul_kernel_initial.LowPart = ft_kernel.dwLowDateTime;
+        ul_kernel_initial.HighPart = ft_kernel.dwHighDateTime;
+        ul_user_initial.LowPart = ft_user.dwLowDateTime;
+        ul_user_initial.HighPart = ft_user.dwHighDateTime;
 
-            if (usage) {
-                usage[strcspn(usage, "\r\n")] = 0;
-                printf("Uso atual: %s%%\n", usage);
+        Sleep(1000);
+
+        if (GetSystemTimes(&ft_idle, &ft_kernel, &ft_user)) {
+            ULARGE_INTEGER ul_idle_final, ul_kernel_final, ul_user_final;
+            ul_idle_final.LowPart = ft_idle.dwLowDateTime;
+            ul_idle_final.HighPart = ft_idle.dwHighDateTime;
+            ul_kernel_final.LowPart = ft_kernel.dwLowDateTime;
+            ul_kernel_final.HighPart = ft_kernel.dwHighDateTime;
+            ul_user_final.LowPart = ft_user.dwLowDateTime;
+            ul_user_final.HighPart = ft_user.dwHighDateTime;
+
+            ULONGLONG idle_diff = ul_idle_final.QuadPart - ul_idle_initial.QuadPart;
+            ULONGLONG kernel_diff = ul_kernel_final.QuadPart - ul_kernel_initial.QuadPart;
+            ULONGLONG user_diff = ul_user_final.QuadPart - ul_user_initial.QuadPart;
+
+            ULONGLONG total_system_time = kernel_diff + user_diff;
+            ULONGLONG total_busy_time = total_system_time - idle_diff;
+
+            if (total_system_time > 0) {
+                double cpu_usage = (double)total_busy_time * 100.0 / total_system_time;
+                printf("Uso atual: %.1f%%\n", cpu_usage);
+            }
+            else {
+                printf("Uso atual: 0.0%%\n");
             }
         }
-
-        _pclose(fp);
+        else {
+            printf("Erro ao obter o uso da CPU.\n");
+        }
+    }
+    else {
+        printf("Erro ao obter o uso da CPU.\n");
     }
 
     printf("--------------------------------------------------\n");
 }
+
 
 // Função para mostrar informações de disco usando comandos do sistema
 void show_disk_info() {
@@ -203,7 +226,6 @@ void show_disk_info() {
 
     // Pular a linha em branco
     fgets(line, sizeof(line), fp);
-
     // Ler a linha de cabeçalho
     fgets(line, sizeof(line), fp);
 
@@ -431,6 +453,7 @@ void show_process_info() {
     printf("\nTotal de processos: %d\n", count);
     printf("--------------------------------------------------\n");
 }
+
 
 // Função para processar comandos de hardware
 int handle_hardware_command(const char* command) {

@@ -41,7 +41,7 @@ int handle_crypto_command(const char* command) {
     return 1;
 }
 
-// Cifra de César (exemplo simples)
+// Cifra de César (simples)
 void encrypt_string(const char* input, char* output, int key) {
     if (!input || !output) {
         printf("Erro: ponteiros nulos na função encrypt_string\n");
@@ -79,8 +79,8 @@ void decrypt_string(const char* input, char* output, int key) {
         return;
     }
 
-    // Para descriptografar, usamos o mesmo algoritmo com chave negativa
-    // Garantimos que a chave esteja no intervalo correto (0-25)
+    // Para descriptografar é a mesma coisa, mas com o algoritmo com chave negativa
+    // Garante que a chave esteja no intervalo correto (0-25)
     int decryptKey = 26 - (key % 26);
     if (decryptKey == 26) decryptKey = 0;
 

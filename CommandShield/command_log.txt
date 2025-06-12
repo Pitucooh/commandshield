@@ -177,3 +177,13 @@
 [Wed May 28 20:30:46 2025] USER: eu | COMMAND: procinfo
 [Wed May 28 20:31:09 2025] USER: eu | COMMAND: drivers
 [Wed May 28 20:31:15 2025] USER: eu | COMMAND: drivers
+[Thu Jun 12 16:10:40 2025] USER: VictorSexy | COMMAND: help
+[Thu Jun 12 16:10:40 2025] USER: VictorSexy | COMMAND: help
+[Thu Jun 12 16:10:44 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:10:46 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:16:20 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:16:22 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:20:10 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:20:11 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:20:34 2025] USER: VictorSexy | COMMAND: cpuinfo
+[Thu Jun 12 16:20:35 2025] USER: VictorSexy | COMMAND: cpuinfo

@@ -6,7 +6,7 @@
 #include "processador_comandos.h"
 #include "logging.h"
 
-// Variável global da conexão SQLite
+// Variável global SQLite
 SQLiteConnection* sqlite_conn = NULL;
 
 // Caminho do banco

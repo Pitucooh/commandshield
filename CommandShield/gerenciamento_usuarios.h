@@ -1,4 +1,3 @@
-// Adicione o header correspondente se não existir
 #ifndef GERENCIAMENTO_USUARIOS_H
 #define GERENCIAMENTO_USUARIOS_H
 

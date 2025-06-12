@@ -12,13 +12,13 @@ void forca_da_senha(char senha[]) {
     int caracterEspecial = 0;
 
     for (int i = 0; senha[i]; i++) {
-        if (islower(senha[i])) // contador para letra minúscula
+        if (islower(senha[i])) 
             letraMinuscula++;
-        if (isupper(senha[i])) // contador para letra maiúscula
+        if (isupper(senha[i])) 
             letraMaiuscula++;
-        if (isdigit(senha[i])) // contador para número
+        if (isdigit(senha[i])) 
             numero++;
-        if (ispunct(senha[i])) // contador para caracter especial
+        if (ispunct(senha[i]))
             caracterEspecial++;
     }
     // testes para a força da senha e com dicas

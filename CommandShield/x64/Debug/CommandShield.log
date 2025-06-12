@@ -1,1 +1,23 @@
-﻿  CommandShield.vcxproj -> C:\Users\verin\Source\Repos\commandshield\x64\Debug\CommandShield.exe
+﻿  sqlite3.c
+  ajuda_usuario.c
+  ferramentas_cripto.c
+  ferramentas_redes.c
+  forcasenha.c
+C:\Users\Victor\source\repos\CSPI\CommandShield\forcasenha.c(8,24): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+  gerenciamento_usuarios.c
+C:\Users\Victor\source\repos\CSPI\CommandShield\gerenciamento_usuarios.c(125,23): warning C4013: 'sqlite_get_changes' indefinido; assumindo extern retornando int
+  Info_Hardware.c
+  logging.c
+  main.c
+  processador_comandos.c
+  quebrasenha.c
+  sqlite_wrapper.c
+  teste.c
+C:\Users\Victor\source\repos\CSPI\CommandShield\teste.c(72,5): warning C4013: 'log_command' indefinido; assumindo extern retornando int
+C:\Users\Victor\source\repos\CSPI\CommandShield\teste.c(75,5): warning C4013: 'view_command_history' indefinido; assumindo extern retornando int
+  testecp.c
+  Gerando Código...
+  gtest-all.cc
+  gmock-all.cc
+  Gerando Código...
+  CommandShield.vcxproj -> C:\Users\Victor\Source\Repos\CSPI\x64\Debug\CommandShield.exe

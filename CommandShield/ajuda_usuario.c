@@ -134,7 +134,7 @@ int process_help_command(const char* command) {
         return 1;
     }
 
-    // Se chegou aqui, o formato está incorreto
+    // Se chegou aqui, digitou errado
     printf("Formato inválido para o comando help. Use 'help' ou 'help [comando]'.\n");
     return 1;
 }
